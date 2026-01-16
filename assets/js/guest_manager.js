@@ -11,7 +11,7 @@ const firebaseConfig = {
     authDomain: "micumpleanho.firebaseapp.com",
     databaseURL: "https://micumpleanho-default-rtdb.firebaseio.com",
     projectId: "micumpleanho",
-    storageBucket: "micumpleanho.firebasestorage.app",
+    storageBucket: "micumpleanho.appspot.com",
     messagingSenderId: "34335404871",
     appId: "1:34335404871:web:a7ef065e1409a7a7719262",
     measurementId: "G-XZW14HMZLL"
