@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const daysEl  = document.getElementById("cd-days");
   const hoursEl = document.getElementById("cd-hours");
   const minsEl  = document.getElementById("cd-mins");
+  const secsEl  = document.getElementById("cd-sec");
 
   // Seguridad: si no existen, aborta//
   if (!daysEl || !hoursEl || !minsEl) {
@@ -23,19 +24,22 @@ document.addEventListener("DOMContentLoaded", () => {
       daysEl.textContent  = "00";
       hoursEl.textContent = "00";
       minsEl.textContent  = "00";
+      if (secsEl) secsEl.textContent = "00";
       return;
     }
 
-    const totalMinutes = Math.floor(diff / 1000 / 60);
-    const days  = Math.floor(totalMinutes / (60 * 24));
-    const hours = Math.floor((totalMinutes % (60 * 24)) / 60);
-    const mins  = totalMinutes % 60;
+    const totalSeconds = Math.floor(diff / 1000);
+    const days  = Math.floor(totalSeconds / (3600 * 24));
+    const hours = Math.floor((totalSeconds % (3600 * 24)) / 3600);
+    const mins  = Math.floor((totalSeconds % 3600) / 60);
+    const secs  = totalSeconds % 60;
 
     daysEl.textContent  = String(days).padStart(2, "0");
     hoursEl.textContent = String(hours).padStart(2, "0");
     minsEl.textContent  = String(mins).padStart(2, "0");
+    if (secsEl) secsEl.textContent = String(secs).padStart(2, "0");
   }
 
   updateCountdown();
-  setInterval(updateCountdown, 60 * 1000);
+  setInterval(updateCountdown, 1000);
 });
