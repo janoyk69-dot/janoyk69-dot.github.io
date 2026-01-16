@@ -127,22 +127,18 @@
 <span class="text-primary/60 text-[10px] font-mono tracking-widest uppercase">&gt; T-MINUS_DETONATION:</span>
 <div class="h-[1px] flex-1 bg-primary/20"></div>
 </div>
-<div class="grid grid-cols-4 gap-2">
+<div class="grid grid-cols-3 gap-2">
 <div class="flex flex-col items-center border border-primary/20 py-2 bg-primary/5">
-<span id="cd-days" class="text-primary font-terminal text-4xl flicker-neon leading-none">00</span>
+<span id="cd-days" class="text-primary font-terminal text-4xl flicker-neon leading-none">--</span>
 <span class="text-primary-dim text-[9px] font-mono uppercase mt-1 tracking-widest">DAYS</span>
 </div>
 <div class="flex flex-col items-center border border-primary/20 py-2 bg-primary/5">
-<span id="cd-hours" class="text-primary font-terminal text-4xl flicker-neon leading-none">00</span>
+<span id="cd-hours" class="text-primary font-terminal text-4xl flicker-neon leading-none">--</span>
 <span class="text-primary-dim text-[9px] font-mono uppercase mt-1 tracking-widest">HOURS</span>
 </div>
 <div class="flex flex-col items-center border border-primary/20 py-2 bg-primary/5">
-<span id="cd-mins" class="text-primary font-terminal text-4xl flicker-neon leading-none">00</span>
+<span id="cd-mins" class="text-primary font-terminal text-4xl flicker-neon leading-none">--</span>
 <span class="text-primary-dim text-[9px] font-mono uppercase mt-1 tracking-widest">MINS</span>
-</div>
-<div class="flex flex-col items-center border border-primary/20 py-2 bg-primary/5">
-<span id="cd-sec" class="text-primary font-terminal text-4xl flicker-neon leading-none">00</span>
-<span class="text-primary-dim text-[9px] font-mono uppercase mt-1 tracking-widest">SEC</span>
 </div>
 </div>
 </div>
@@ -231,5 +227,39 @@
 </div>
 </div>
 
-<script src="js/countdown.js"></script>
+<script>
+(function() {
+    function updateCountdown() {
+        const TARGET = new Date(2026, 0, 30, 19, 0, 0); 
+        const NOW = new Date();
+        const diff = TARGET - NOW;
+
+        const dEl = document.getElementById("cd-days");
+        const hEl = document.getElementById("cd-hours");
+        const mEl = document.getElementById("cd-mins");
+
+        if (!dEl || !hEl || !mEl) return;
+
+        if (diff <= 0) {
+            dEl.textContent = "00";
+            hEl.textContent = "00";
+            mEl.textContent = "00";
+            return;
+        }
+
+        const totalSeconds = Math.floor(diff / 1000);
+        const days = Math.floor(totalSeconds / 86400);
+        const hours = Math.floor((totalSeconds % 86400) / 3600);
+        const mins = Math.floor((totalSeconds % 3600) / 60);
+
+        dEl.textContent = String(days).padStart(2, "0");
+        hEl.textContent = String(hours).padStart(2, "0");
+        mEl.textContent = String(mins).padStart(2, "0");
+    }
+
+    // Run immediately and then every minute
+    updateCountdown();
+    setInterval(updateCountdown, 60000);
+})();
+</script>
 </body></html>
