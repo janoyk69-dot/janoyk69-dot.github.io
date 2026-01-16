@@ -1,18 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="utf-8" />
   <title>Redirecting…</title>
 
-  <script>
-    // Preservar parámetros de búsqueda al redirigir
-    const urlParams = window.location.search;
-    window.location.href = "assets/invitacion.html" + urlParams;
-  </script>
-
-  <!-- SEO / fallback -->
-  <meta name="robots" content="noindex, nofollow" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+
+  <script>
+    // Preserva parámetros si existieran
+    const params = window.location.search;
+    window.location.replace("assets/invitacion.html" + params);
+  </script>
 
   <style>
     body {
@@ -23,13 +22,16 @@
       align-items: center;
       justify-content: center;
       height: 100vh;
+      margin: 0;
     }
+    a { color: #00ff41; }
   </style>
 </head>
+
 <body>
   <p>
     Redirecting to invitation…<br />
-    <a href="assets/invitacion.html" style="color:#00ff41;">
+    <a href="assets/invitacion.html">
       Click here if not redirected
     </a>
   </p>
