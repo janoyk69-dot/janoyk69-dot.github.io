@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <!-- ================= META ================= -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="23rd Birthday Celebration – Hacker Style Invitation" />
+  <meta name="theme-color" content="#00ff41" />
+
+  <title>23rd Birthday Celebration</title>
+
+  <!-- ================= FONTS ================= -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=VT323&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
+  <!-- ================= TAILWIND ================= -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <!-- ================= TAILWIND CONFIG ================= -->
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#00ff41",
+            "primary-dim": "#008F11",
+          },
+          fontFamily: {
+            display: ["Share Tech Mono", "monospace"],
+            terminal: ["VT323", "monospace"],
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- ================= GLOBAL STYLES ================= -->
+  <style>
+    body {
+      background-color: #000;
+      min-height: 100vh;
+    }
+
+    /* CRT overlay */
+    .crt::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(rgba(18,16,16,0) 50%, rgba(0,0,0,.25) 50%),
+        linear-gradient(90deg, rgba(255,0,0,.06), rgba(0,255,0,.02), rgba(0,0,255,.06));
+      background-size: 100% 2px, 3px 100%;
+      z-index: 50;
+    }
+  </style>
+</head>
+
+<body class="bg-black font-display antialiased crt overflow-x-hidden selection:bg-primary selection:text-black">
+
+  <!-- ================= APP CONTAINER ================= -->
+  <div class="relative flex min-h-screen max-w-md mx-auto flex-col border-x border-primary/10">
+
+    <!-- ================= HEADER ================= -->
+    <header class="flex items-center justify-between p-4 border-b border-primary/20 bg-black/80 backdrop-blur">
+      <span class="material-symbols-outlined text-primary">terminal</span>
+      <span class="text-primary text-xs tracking-widest uppercase">&lt; SYSTEM_READY /&gt;</span>
+      <span class="w-2 h-2 bg-primary rounded-full animate-pulse shadow-[0_0_8px_#00ff41]"></span>
+    </header>
+
+    <!-- ================= HERO ================= -->
+    <section class="flex flex-col items-center justify-center text-center py-10 px-4">
+      <h1 class="font-terminal text-[140px] leading-[0.8] text-primary drop-shadow-[0_0_10px_rgba(0,255,65,0.8)]">
+        23
+      </h1>
+      <p class="text-primary-dim text-xs font-bold uppercase tracking-[0.3em] mt-2">
+        &gt; SUBJECT: JUAN EMILIO
+      </p>
+      <p class="text-white font-bold tracking-widest mt-1">
+        ACCESS_GRANTED
+      </p>
+    </section>
+
+    <!-- ================= COUNTDOWN ================= -->
+    <section class="px-4 mb-6">
+      <div class="border border-primary/30 bg-black/80 p-4">
+        <p class="text-primary/60 text-xs uppercase tracking-widest mb-3">
+          &gt; T-MINUS:
+        </p>
+        <div class="grid grid-cols-3 gap-3 text-center">
+          <div class="border border-primary/20 py-3">
+            <span id="cd-days" class="block text-primary font-terminal text-4xl">00</span>
+            <span class="text-primary-dim text-[10px] uppercase">DAYS</span>
+          </div>
+          <div class="border border-primary/20 py-3">
+            <span id="cd-hours" class="block text-primary font-terminal text-4xl">00</span>
+            <span class="text-primary-dim text-[10px] uppercase">HOURS</span>
+          </div>
+          <div class="border border-primary/20 py-3">
+            <span id="cd-mins" class="block text-primary font-terminal text-4xl">00</span>
+            <span class="text-primary-dim text-[10px] uppercase">MINS</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= EVENT DETAILS ================= -->
+    <section class="px-4 mb-6">
+      <div class="border border-primary/30 bg-black/80 p-4 space-y-4">
+        <h2 class="text-primary text-sm font-bold tracking-widest border-b border-primary/20 pb-2">
+          &gt; MISSION_DETAILS_
+        </h2>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <p class="text-primary/60 text-xs uppercase">Date</p>
+            <p class="text-white font-terminal">30 de enero 2026</p>
+          </div>
+          <div>
+            <p class="text-primary/60 text-xs uppercase">Time</p>
+            <p class="text-white font-terminal">19:00 HRS</p>
+          </div>
+        </div>
+
+        <a
+          href="https://maps.google.com/?q=Juan+Emilio+Pacull"
+          target="_blank"
+          class="flex items-center gap-3 border border-primary/20 p-3 hover:bg-primary/10 transition"
+        >
+          <span class="material-symbols-outlined text-primary">location_on</span>
+          <div>
+            <p class="text-white font-bold">Juan Emilio Pacull</p>
+            <p class="text-primary/60 text-xs uppercase">&gt; Open navigation</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ================= FOOTER / CTA ================= -->
+    <footer class="mt-auto p-6 border-t border-primary/20 bg-black/90 text-center">
+      <button class="w-full bg-primary text-black font-bold py-4 uppercase tracking-widest shadow-[0_0_20px_rgba(0,255,65,0.4)] active:scale-95 transition">
+        EXECUTE_SEND
+      </button>
+      <p class="text-primary/30 text-[10px] uppercase tracking-widest mt-3">
+        SYSTEM_STATUS: STABLE
+      </p>
+    </footer>
+
+  </div>
+
+  <!-- ================= SCRIPTS ================= -->
+  <script src="assets/js/countdown.js"></script>
+</body>
+</html>
