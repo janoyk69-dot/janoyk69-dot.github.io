@@ -1,14 +1,19 @@
 <!DOCTYPE html>
-<html class="dark" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Final Hacker Birthday Invitation with Countdown</title>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&amp;family=VT323&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Final Hacker Birthday Invitation with Countdown</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&amp;family=VT323&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -30,7 +35,7 @@
             },
         }
     </script>
-<style type="text/tailwindcss">
+    <style type="text/tailwindcss">
         @layer utilities {
             .crt::before {
                 content: " ";
@@ -76,246 +81,338 @@
             }
         }
     </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-  </head>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
 <body class="bg-black font-display antialiased selection:bg-primary selection:text-black crt overflow-x-hidden">
-<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto shadow-2xl bg-black border-x border-primary/10">
-<div class="fixed inset-0 bg-matrix-pattern opacity-40 z-0 pointer-events-none"></div>
-<div class="fixed top-0 left-0 w-full h-full bg-gradient-to-b from-black/10 via-black/40 to-black/90 z-0 pointer-events-none"></div>
-<div class="relative z-10 flex items-center p-4 justify-between border-b border-primary/20 bg-black/80 backdrop-blur-sm">
-<div class="flex items-center gap-2">
-<button class="text-primary flex size-8 items-center justify-center border border-primary/30 bg-black">
-<span class="material-symbols-outlined text-sm">terminal</span>
-</button>
-<span class="text-primary/60 text-[10px] font-mono tracking-tighter">OS_V2.23.0</span>
-</div>
-<h2 class="text-primary text-[10px] font-bold tracking-[0.2em] uppercase loading-indicator">
-            SYSTEM_BOOT_SEQUENCE
-        </h2>
-<div class="size-6 flex items-center justify-center">
-<span class="block w-2 h-2 bg-primary rounded-full animate-pulse shadow-[0_0_8px_#00ff41]"></span>
-</div>
-</div>
-<div class="relative z-10 flex flex-col items-center justify-center pt-6 pb-4 text-center px-4">
-<div class="relative border-2 border-primary/50 p-6 bg-black/70 backdrop-blur-sm shadow-[0_0_15px_rgba(0,255,65,0.15)] w-full">
-<div class="absolute -top-1 -left-1 w-4 h-4 border-t-2 border-l-2 border-primary"></div>
-<div class="absolute -top-1 -right-1 w-4 h-4 border-t-2 border-r-2 border-primary"></div>
-<div class="absolute -bottom-1 -left-1 w-4 h-4 border-b-2 border-l-2 border-primary"></div>
-<div class="absolute -bottom-1 -right-1 w-4 h-4 border-b-2 border-r-2 border-primary"></div>
-<div class="flex justify-between items-center mb-2 px-1">
-<span class="text-primary/40 text-[9px] font-mono">[DECRYPTING_TARGET]</span>
-<span class="text-primary/40 text-[9px] font-mono">ID: 0x23_JAN_30</span>
-</div>
-<h1 class="font-terminal text-[120px] leading-[0.8] text-primary tracking-tighter drop-shadow-[0_0_10px_rgba(0,255,65,0.8)]">
-                23
-            </h1>
-<div class="mt-4 flex flex-col items-center gap-1">
-<p class="text-primary-dim text-xs font-bold uppercase tracking-[0.3em]">&gt; MI CUMPLEAÑOS</p>
-<div class="bg-primary/20 px-4 py-1 border border-primary/40 mt-1">
-<p class="text-primary text-sm font-bold tracking-[0.3em] uppercase">ACCESS_GRANTED</p>
-</div>
-</div>
-</div>
-</div>
-<div class="relative z-10 px-4 mb-4">
-<div class="bg-black border border-primary/40 p-3 shadow-[0_0_10px_rgba(0,255,65,0.05)]">
-<div class="flex items-center gap-2 mb-3">
-<span class="text-primary/60 text-[10px] font-mono tracking-widest uppercase">&gt; T-MINUS_DETONATION:</span>
-<div class="h-[1px] flex-1 bg-primary/20"></div>
-</div>
-<div class="grid grid-cols-4 gap-2">
-<div class="flex flex-col items-center border border-primary/20 py-2 bg-primary/5">
-<span id="cd-days" class="text-primary font-terminal text-4xl flicker-neon leading-none">--</span>
-<span class="text-primary-dim text-[9px] font-mono uppercase mt-1 tracking-widest">DAYS</span>
-</div>
-<div class="flex flex-col items-center border border-primary/20 py-2 bg-primary/5">
-<span id="cd-hours" class="text-primary font-terminal text-4xl flicker-neon leading-none">--</span>
-<span class="text-primary-dim text-[9px] font-mono uppercase mt-1 tracking-widest">HOURS</span>
-</div>
-<div class="flex flex-col items-center border border-primary/20 py-2 bg-primary/5">
-<span id="cd-mins" class="text-primary font-terminal text-4xl flicker-neon leading-none">--</span>
-<span class="text-primary-dim text-[9px] font-mono uppercase mt-1 tracking-widest">MINS</span>
-</div>
-<div class="flex flex-col items-center border border-primary/20 py-2 bg-primary/5">
-<span id="cd-secs" class="text-primary font-terminal text-4xl flicker-neon leading-none">--</span>
-<span class="text-primary-dim text-[9px] font-mono uppercase mt-1 tracking-widest">SECS</span>
-</div>
-</div>
-</div>
-</div>
-<div class="relative z-10 px-4">
-<div class="bg-black/80 border border-primary/30 p-1 relative shadow-lg">
-<div class="bg-primary/5 p-4 border border-primary/10">
-<h2 class="text-primary text-md font-bold text-left mb-4 tracking-widest border-b border-primary/20 pb-2 flex items-center gap-2">
-<span class="material-symbols-outlined text-sm">security</span>
-                    &gt; MISSION_DETAILS_
-                </h2>
-<div class="flex items-start justify-between mb-6 gap-2">
-<div class="flex flex-col flex-1 border-r border-primary/20 pr-2">
-<div class="flex items-center gap-2 mb-1">
-<span class="text-primary material-symbols-outlined text-base">calendar_month</span>
-<span class="text-primary/60 text-[10px] font-bold uppercase font-mono">Date_Log</span>
-</div>
-<span class="text-white font-bold text-md leading-tight font-terminal uppercase">30 de enero</span>
-<span class="text-primary-dim text-[10px] font-mono uppercase mt-1">2026_CYBER_Y</span>
-</div>
-<div class="flex flex-col flex-1 pl-4">
-<div class="flex items-center gap-2 mb-1">
-<span class="text-primary material-symbols-outlined text-base">schedule</span>
-<span class="text-primary/60 text-[10px] font-bold uppercase font-mono">Timestamp</span>
-</div>
-<span class="text-white font-bold text-md leading-tight font-terminal uppercase">19:00 HRS</span>
-<span class="text-primary-dim text-[10px] font-mono uppercase mt-1">GMT_LOCAL</span>
-</div>
-</div>
-<a href="https://www.google.com/maps/search/?api=1&query=Juan+Emilio+Pacull" target="_blank" class="w-full relative bg-primary/10 border border-primary/20 p-3 flex items-center gap-3 hover:bg-primary/20 transition-all cursor-pointer group">
-<div class="h-8 w-8 border border-primary flex items-center justify-center shrink-0 shadow-[0_0_5px_rgba(0,255,65,0.3)] bg-black">
-<span class="material-symbols-outlined text-primary text-sm">location_on</span>
-</div>
-<div class="flex flex-col items-start flex-1 min-w-0">
-<span class="text-white text-lg font-bold truncate w-full text-left tracking-wide font-terminal uppercase">Juan Emilio Pacull</span>
-<span class="text-primary/60 text-[10px] truncate w-full text-left font-mono">&gt; NAV_OVERRIDE</span>
-</div>
-<span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">chevron_right</span>
-</a>
-</div>
-</div>
-</div>
-<div class="relative z-10 flex-1 flex flex-col justify-end mt-6">
-<div class="bg-[#050505] border-t-2 border-primary p-6 pb-10 shadow-[0_-10px_40px_-15px_rgba(0,255,65,0.1)]">
-<div class="flex items-center justify-center mb-6">
-<div class="bg-black border border-primary px-4 py-1 -mt-10 shadow-[0_0_10px_rgba(0,255,65,0.2)]">
-<span class="text-primary text-[10px] font-bold tracking-[0.3em] uppercase">SECURE_CHANNEL_v4</span>
-</div>
-</div>
-<form class="flex flex-col gap-5" id="invitation-form" onsubmit="handleAuth(event)">
-<div class="grid grid-cols-2 gap-4">
-<button type="button" onclick="setStatus('ASISTIRÉ', this)" class="relative py-3 text-[10px] font-bold text-black bg-primary border border-primary transition-colors uppercase tracking-[0.2em] font-mono">
-                        [ ASISTIRÉ ]
+    <div
+        class="relative flex min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto shadow-2xl bg-black border-x border-primary/10">
+        <div class="fixed inset-0 bg-matrix-pattern opacity-40 z-0 pointer-events-none"></div>
+        <div
+            class="fixed top-0 left-0 w-full h-full bg-gradient-to-b from-black/10 via-black/40 to-black/90 z-0 pointer-events-none">
+        </div>
+        <div
+            class="relative z-10 flex items-center p-4 justify-between border-b border-primary/20 bg-black/80 backdrop-blur-sm">
+            <div class="flex items-center gap-2">
+                <button class="text-primary flex size-8 items-center justify-center border border-primary/30 bg-black">
+                    <span class="material-symbols-outlined text-sm">terminal</span>
+                </button>
+                <span class="text-primary/60 text-[10px] font-mono tracking-tighter">OS_V2.23.0</span>
+            </div>
+            <h2 class="text-primary text-[10px] font-bold tracking-[0.2em] uppercase loading-indicator">
+                SYSTEM_BOOT_SEQUENCE
+            </h2>
+            <div class="size-6 flex items-center justify-center">
+                <span class="block w-2 h-2 bg-primary rounded-full animate-pulse shadow-[0_0_8px_#00ff41]"></span>
+            </div>
+        </div>
+        <div class="relative z-10 flex flex-col items-center justify-center pt-6 pb-4 text-center px-4">
+            <div
+                class="relative border-2 border-primary/50 p-6 bg-black/70 backdrop-blur-sm shadow-[0_0_15px_rgba(0,255,65,0.15)] w-full">
+                <div class="absolute -top-1 -left-1 w-4 h-4 border-t-2 border-l-2 border-primary"></div>
+                <div class="absolute -top-1 -right-1 w-4 h-4 border-t-2 border-r-2 border-primary"></div>
+                <div class="absolute -bottom-1 -left-1 w-4 h-4 border-b-2 border-l-2 border-primary"></div>
+                <div class="absolute -bottom-1 -right-1 w-4 h-4 border-b-2 border-r-2 border-primary"></div>
+                <div class="flex justify-between items-center mb-2 px-1">
+                    <span class="text-primary/40 text-[9px] font-mono">[DECRYPTING_TARGET]</span>
+                    <span class="text-primary/40 text-[9px] font-mono">ID: 0x23_JAN_30</span>
+                </div>
+                <h1
+                    class="font-terminal text-[120px] leading-[0.8] text-primary tracking-tighter drop-shadow-[0_0_10px_rgba(0,255,65,0.8)]">
+                    23
+                </h1>
+                <div class="mt-4 flex flex-col items-center gap-1">
+                    <p class="text-primary-dim text-xs font-bold uppercase tracking-[0.3em]">&gt; MI CUMPLEAÑOS</p>
+                    <div class="bg-primary/20 px-4 py-1 border border-primary/40 mt-1">
+                        <p class="text-primary text-sm font-bold tracking-[0.3em] uppercase">ACCESS_GRANTED</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="relative z-10 px-4 mb-4">
+            <div class="bg-black border border-primary/40 p-3 shadow-[0_0_10px_rgba(0,255,65,0.05)]">
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="text-primary/60 text-[10px] font-mono tracking-widest uppercase">&gt;
+                        T-MINUS_DETONATION:</span>
+                    <div class="h-[1px] flex-1 bg-primary/20"></div>
+                </div>
+                <div class="grid grid-cols-4 gap-2">
+                    <div class="flex flex-col items-center border border-primary/20 py-2 bg-primary/5">
+                        <span id="cd-days"
+                            class="text-primary font-terminal text-4xl flicker-neon leading-none">--</span>
+                        <span class="text-primary-dim text-[9px] font-mono uppercase mt-1 tracking-widest">DAYS</span>
+                    </div>
+                    <div class="flex flex-col items-center border border-primary/20 py-2 bg-primary/5">
+                        <span id="cd-hours"
+                            class="text-primary font-terminal text-4xl flicker-neon leading-none">--</span>
+                        <span class="text-primary-dim text-[9px] font-mono uppercase mt-1 tracking-widest">HOURS</span>
+                    </div>
+                    <div class="flex flex-col items-center border border-primary/20 py-2 bg-primary/5">
+                        <span id="cd-mins"
+                            class="text-primary font-terminal text-4xl flicker-neon leading-none">--</span>
+                        <span class="text-primary-dim text-[9px] font-mono uppercase mt-1 tracking-widest">MINS</span>
+                    </div>
+                    <div class="flex flex-col items-center border border-primary/20 py-2 bg-primary/5">
+                        <span id="cd-secs"
+                            class="text-primary font-terminal text-4xl flicker-neon leading-none">--</span>
+                        <span class="text-primary-dim text-[9px] font-mono uppercase mt-1 tracking-widest">SECS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="relative z-10 px-4">
+            <div class="bg-black/80 border border-primary/30 p-1 relative shadow-lg">
+                <div class="bg-primary/5 p-4 border border-primary/10">
+                    <h2
+                        class="text-primary text-md font-bold text-left mb-4 tracking-widest border-b border-primary/20 pb-2 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-sm">security</span>
+                        &gt; MISSION_DETAILS_
+                    </h2>
+                    <div class="flex items-start justify-between mb-6 gap-2">
+                        <div class="flex flex-col flex-1 border-r border-primary/20 pr-2">
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="text-primary material-symbols-outlined text-base">calendar_month</span>
+                                <span class="text-primary/60 text-[10px] font-bold uppercase font-mono">Date_Log</span>
+                            </div>
+                            <span class="text-white font-bold text-md leading-tight font-terminal uppercase">30 de
+                                enero</span>
+                            <span class="text-primary-dim text-[10px] font-mono uppercase mt-1">2026_CYBER_Y</span>
+                        </div>
+                        <div class="flex flex-col flex-1 pl-4">
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="text-primary material-symbols-outlined text-base">schedule</span>
+                                <span class="text-primary/60 text-[10px] font-bold uppercase font-mono">Timestamp</span>
+                            </div>
+                            <span class="text-white font-bold text-md leading-tight font-terminal uppercase">19:00
+                                HRS</span>
+                            <span class="text-primary-dim text-[10px] font-mono uppercase mt-1">GMT_LOCAL</span>
+                        </div>
+                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Juan+Emilio+Pacull" target="_blank"
+                        class="w-full relative bg-primary/10 border border-primary/20 p-3 flex items-center gap-3 hover:bg-primary/20 transition-all cursor-pointer group">
+                        <div
+                            class="h-8 w-8 border border-primary flex items-center justify-center shrink-0 shadow-[0_0_5px_rgba(0,255,65,0.3)] bg-black">
+                            <span class="material-symbols-outlined text-primary text-sm">location_on</span>
+                        </div>
+                        <div class="flex flex-col items-start flex-1 min-w-0">
+                            <span
+                                class="text-white text-lg font-bold truncate w-full text-left tracking-wide font-terminal uppercase">Juan
+                                Emilio Pacull</span>
+                            <span class="text-primary/60 text-[10px] truncate w-full text-left font-mono">&gt;
+                                NAV_OVERRIDE</span>
+                        </div>
+                        <span
+                            class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">chevron_right</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="relative z-10 flex-1 flex flex-col justify-end mt-6">
+            <div
+                class="bg-[#050505] border-t-2 border-primary p-6 pb-10 shadow-[0_-10px_40px_-15px_rgba(0,255,65,0.1)]">
+                <div class="flex items-center justify-center mb-6">
+                    <div class="bg-black border border-primary px-4 py-1 -mt-10 shadow-[0_0_10px_rgba(0,255,65,0.2)]">
+                        <span
+                            class="text-primary text-[10px] font-bold tracking-[0.3em] uppercase">SECURE_CHANNEL_v4</span>
+                    </div>
+                </div>
+                <form class="flex flex-col gap-5" id="invitation-form" onsubmit="handleSubmit(event)">
+                    <div class="grid grid-cols-2 gap-4">
+                        <button type="button" onclick="setStatus('ASISTIRÉ', this)"
+                            class="relative py-3 text-[10px] font-bold text-black bg-primary border border-primary transition-colors uppercase tracking-[0.2em] font-mono">
+                            [ ASISTIRÉ ]
+                        </button>
+                        <button type="button" onclick="setStatus('NO_ASISTIRÉ', this)"
+                            class="relative py-3 text-[10px] font-bold text-primary border border-primary/40 hover:bg-primary/10 transition-colors uppercase tracking-[0.2em] font-mono">
+                            [ NO ASISTIRÉ ]
+                        </button>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <input type="hidden" name="estado" id="mission-status" value="PENDING">
+                        <label class="text-[10px] font-bold text-primary/70 uppercase tracking-[0.2em] pl-1 font-mono"
+                            for="name">&gt; AUTH_IDENT_TOKEN:</label>
+                        <div class="relative group">
+                            <span
+                                class="absolute left-3 top-1/2 -translate-y-1/2 text-primary font-bold font-mono">$</span>
+                            <input required name="nombre"
+                                class="w-full bg-black text-white placeholder:text-gray-800 px-8 py-3 border border-primary/40 focus:border-primary outline-none transition-all font-mono text-xs tracking-wider shadow-inner"
+                                id="name" placeholder="Escribe tu nombre..." type="text" />
+                            <div class="absolute right-3 top-1/2 -translate-y-1/2 flex items-center">
+                                <span class="text-primary/30 material-symbols-outlined text-sm">fingerprint</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit"
+                        class="w-full bg-primary border-4 border-double border-black text-black font-black text-lg py-4 shadow-[0_0_20px_rgba(0,255,65,0.4)] active:scale-95 transition-all flex flex-col items-center justify-center mt-2 uppercase tracking-[0.25em] group overflow-hidden">
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-xl">priority_high</span>
+                            <span>REGISTRAR ASISTENCIA</span>
+                            <span class="material-symbols-outlined text-xl">send</span>
+                        </div>
+                        <div class="text-[8px] font-mono mt-0.5 opacity-80 tracking-widest uppercase">
+                            CRITICAL_TASK_COMMAND</div>
                     </button>
-<button type="button" onclick="setStatus('NO_ASISTIRÉ', this)" class="relative py-3 text-[10px] font-bold text-primary border border-primary/40 hover:bg-primary/10 transition-colors uppercase tracking-[0.2em] font-mono">
-                        [ NO ASISTIRÉ ]
-                    </button>
-</div>
-<div class="flex flex-col gap-2">
-<input type="hidden" id="mission-status" value="PENDING">
-<label class="text-[10px] font-bold text-primary/70 uppercase tracking-[0.2em] pl-1 font-mono" for="name">&gt; AUTH_IDENT_TOKEN:</label>
-<div class="relative group">
-<span class="absolute left-3 top-1/2 -translate-y-1/2 text-primary font-bold font-mono">$</span>
-<input required class="w-full bg-black text-white placeholder:text-gray-800 px-8 py-3 border border-primary/40 focus:border-primary outline-none transition-all font-mono text-xs tracking-wider shadow-inner" id="name" placeholder="Escribe tu nombre..." type="text"/>
-<div class="absolute right-3 top-1/2 -translate-y-1/2 flex items-center">
-<span class="text-primary/30 material-symbols-outlined text-sm">fingerprint</span>
-</div>
-</div>
-</div>
-<button type="submit" class="w-full bg-primary border-4 border-double border-black text-black font-black text-lg py-4 shadow-[0_0_20px_rgba(0,255,65,0.4)] active:scale-95 transition-all flex flex-col items-center justify-center mt-2 uppercase tracking-[0.25em] group overflow-hidden">
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-xl">priority_high</span>
-<span>REGISTRAR ASISTENCIA</span>
-<span class="material-symbols-outlined text-xl">send</span>
-</div>
-<div class="text-[8px] font-mono mt-0.5 opacity-80 tracking-widest uppercase">CRITICAL_TASK_COMMAND</div>
-</button>
-<div class="flex justify-center mt-2 flex-col items-center gap-2">
-<a class="flex items-center gap-1.5 text-primary/40 hover:text-primary transition-colors text-[9px] font-mono uppercase tracking-widest" href="invitados.html">
-<span class="material-symbols-outlined text-xs">group</span>
-<span>VER LISTA DE INVITADOS</span>
-</a>
-<div class="text-[8px] text-primary/20 font-mono loading-indicator">SYSTEM_STATUS_STABLE_V23</div>
-</div>
-</form>
-</div>
-</div>
-</div>
+                    <div class="flex justify-center mt-2 flex-col items-center gap-2">
+                        <a class="flex items-center gap-1.5 text-primary/40 hover:text-primary transition-colors text-[9px] font-mono uppercase tracking-widest"
+                            href="invitados.html">
+                            <span class="material-symbols-outlined text-xs">group</span>
+                            <span>VER LISTA DE INVITADOS</span>
+                        </a>
+                        <div class="text-[8px] text-primary/20 font-mono loading-indicator">SYSTEM_STATUS_STABLE_V23
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
-<!-- Firebase SDK -->
-<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
 
-<script src="assets/js/guest_manager_sheets.js"></script>
-<script>
-(function() {
-    // Comprobar si viene de una confirmación
-    const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get('confirmed')) {
-        const name = urlParams.get('name');
-        const status = urlParams.get('status') === 'ASISTIRÉ' ? 'confirmada' : 'declinada';
-        alert(`> SYSTEM_MESSAGE: ¡Misión cumplida! ${name}, su respuesta ha sido ${status} con éxito. Redirigiendo al inicio...`);
-        // Limpiar la URL y redirigir al index (opcional, o quedarse aquí)
-        window.history.replaceState({}, document.title, window.location.pathname);
-    }
+    <script>
+            (function () {
+                // Comprobar si viene de una confirmación
+                const urlParams = new URLSearchParams(window.location.search);
+                if (urlParams.get('confirmed')) {
+                    const name = urlParams.get('name');
+                    const status = urlParams.get('status') === 'ASISTIRÉ' ? 'confirmada' : 'declinada';
+                    alert(`> SYSTEM_MESSAGE: ¡Misión cumplida! ${name}, su respuesta ha sido ${status} con éxito. Redirigiendo al inicio...`);
+                    // Limpiar la URL y redirigir al index (opcional, o quedarse aquí)
+                    window.history.replaceState({}, document.title, window.location.pathname);
+                }
 
-    function updateCountdown() {
-        const TARGET = new Date(2026, 0, 30, 19, 0, 0); 
-        const NOW = new Date();
-        const diff = TARGET - NOW;
+                function updateCountdown() {
+                    const TARGET = new Date(2026, 0, 30, 19, 0, 0);
+                    const NOW = new Date();
+                    const diff = TARGET - NOW;
 
-        const dEl = document.getElementById("cd-days");
-        const hEl = document.getElementById("cd-hours");
-        const mEl = document.getElementById("cd-mins");
-        const sEl = document.getElementById("cd-secs");
+                    const dEl = document.getElementById("cd-days");
+                    const hEl = document.getElementById("cd-hours");
+                    const mEl = document.getElementById("cd-mins");
+                    const sEl = document.getElementById("cd-secs");
 
-        if (!dEl || !hEl || !mEl || !sEl) return;
+                    if (!dEl || !hEl || !mEl || !sEl) return;
 
-        if (diff <= 0) {
-            dEl.textContent = "00";
-            hEl.textContent = "00";
-            mEl.textContent = "00";
-            sEl.textContent = "00";
-            return;
+                    if (diff <= 0) {
+                        dEl.textContent = "00";
+                        hEl.textContent = "00";
+                        mEl.textContent = "00";
+                        sEl.textContent = "00";
+                        return;
+                    }
+
+                    const totalSeconds = Math.floor(diff / 1000);
+                    const days = Math.floor(totalSeconds / 86400);
+                    const hours = Math.floor((totalSeconds % 86400) / 3600);
+                    const mins = Math.floor((totalSeconds % 3600) / 60);
+                    const secs = totalSeconds % 60;
+
+                    dEl.textContent = String(days).padStart(2, "0");
+                    hEl.textContent = String(hours).padStart(2, "0");
+                    mEl.textContent = String(mins).padStart(2, "0");
+                    sEl.textContent = String(secs).padStart(2, "0");
+                }
+
+                // Run immediately and then every second
+                updateCountdown();
+                setInterval(updateCountdown, 1000);
+            })();
+
+        function setStatus(status, btn) {
+            document.getElementById('mission-status').value = status;
+
+            // Limpiar estilos de otros botones
+            const buttons = btn.parentElement.querySelectorAll('button');
+            buttons.forEach(b => {
+                b.classList.remove('ring-4', 'ring-primary', 'scale-105');
+                b.style.boxShadow = 'none';
+            });
+
+            // Aplicar estilo al seleccionado
+            btn.classList.add('ring-4', 'ring-primary', 'scale-105');
+            btn.style.boxShadow = '0 0 15px #00ff41';
+
+            console.log("Status selected:", status);
         }
 
-        const totalSeconds = Math.floor(diff / 1000);
-        const days = Math.floor(totalSeconds / 86400);
-        const hours = Math.floor((totalSeconds % 86400) / 3600);
-        const mins = Math.floor((totalSeconds % 3600) / 60);
-        const secs = totalSeconds % 60;
+        const SHEETS_URL = "https://script.google.com/macros/s/AKfycbxOeLiBMZWsfWlaE-60yt2sUu4dCn5F3cRWXnZ0c6fbrtPYXMlFSHT-USFDXxoI5GP04A/exec";
 
-        dEl.textContent = String(days).padStart(2, "0");
-        hEl.textContent = String(hours).padStart(2, "0");
-        mEl.textContent = String(mins).padStart(2, "0");
-        sEl.textContent = String(secs).padStart(2, "0");
-    }
+        function handleSubmit(event) {
+            event.preventDefault();
+            const nombre = document.getElementById('name').value;
+            const estado = document.getElementById('mission-status').value;
 
-    // Run immediately and then every second
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-})();
+            if (!nombre || estado === 'PENDING') {
+                showModal('⚠️ ERROR', 'Por favor selecciona si asistirás o no y escribe tu nombre.', 'error');
+                return;
+            }
 
-function setStatus(status, btn) {
-    document.getElementById('mission-status').value = status;
-    
-    // Limpiar estilos de otros botones
-    const buttons = btn.parentElement.querySelectorAll('button');
-    buttons.forEach(b => {
-        b.classList.remove('ring-4', 'ring-primary', 'scale-105');
-        b.style.boxShadow = 'none';
-    });
-    
-    // Aplicar estilo al seleccionado
-    btn.classList.add('ring-4', 'ring-primary', 'scale-105');
-    btn.style.boxShadow = '0 0 15px #00ff41';
-    
-    console.log("Status selected:", status);
-}
+            // Mostrar loading
+            showModal('⏳ PROCESANDO...', 'Enviando datos al servidor...', 'loading');
 
-function handleAuth(event) {
-    event.preventDefault();
-    const name = document.getElementById('name').value;
-    const status = document.getElementById('mission-status').value;
+            // Enviar con fetch
+            const formData = new FormData();
+            formData.append('nombre', nombre);
+            formData.append('estado', estado);
 
-    if (!name || status === 'PENDING') {
-        alert("Por favor selecciona si asistirás o no y escribe tu nombre.");
-        return;
-    }
+            fetch(SHEETS_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                body: formData
+            })
+                .then(() => {
+                    // Mensajes diferentes según la respuesta
+                    if (estado === 'NO_ASISTIRÉ') {
+                        showModal('⚠️ MISIÓN FALLIDA', `No creo que podamos ingresar al servidor exitosamente sin "${nombre}". Tu respuesta ha sido registrada.`, 'error');
+                    } else {
+                        showModal('✅ MISIÓN COMPLETADA', `¡${nombre}, acceso concedido! Tu confirmación ha sido registrada con éxito.`, 'success');
+                    }
+                    document.getElementById('invitation-form').reset();
+                    document.getElementById('mission-status').value = 'PENDING';
+                    // Limpiar estilos de botones
+                    document.querySelectorAll('#invitation-form button[type="button"]').forEach(b => {
+                        b.classList.remove('ring-4', 'ring-primary', 'scale-105');
+                        b.style.boxShadow = 'none';
+                    });
+                })
+                .catch(err => {
+                    showModal('❌ ERROR', 'Hubo un problema al registrar. Intenta de nuevo.', 'error');
+                    console.error(err);
+                });
+        }
 
-    saveGuestSheets(name, status);
-    // Redirigir a la página principal con parámetros
-    window.location.href = `../index.html?confirmed=true&status=${status}&name=${encodeURIComponent(name)}`;
-}
-</script>
-</body></html>
+        function showModal(title, message, type) {
+            // Remover modal existente si hay
+            const existing = document.getElementById('hacker-modal');
+            if (existing) existing.remove();
+
+            const colors = {
+                success: 'border-primary shadow-[0_0_30px_rgba(0,255,65,0.4)]',
+                error: 'border-red-500 shadow-[0_0_30px_rgba(255,0,0,0.4)]',
+                loading: 'border-yellow-500 shadow-[0_0_30px_rgba(255,255,0,0.4)]'
+            };
+
+            const modal = document.createElement('div');
+            modal.id = 'hacker-modal';
+            modal.innerHTML = `
+                <div class="fixed inset-0 bg-black/90 z-[200] flex items-center justify-center p-4" onclick="if(event.target === this) closeModal()">
+                    <div class="max-w-sm w-full bg-black border-2 ${colors[type]} p-6 text-center">
+                        <h2 class="text-primary text-2xl font-terminal mb-4">${title}</h2>
+                        <p class="text-white font-mono text-sm mb-6">${message}</p>
+                        ${type !== 'loading' ? '<button onclick="closeModal()" class="bg-primary text-black px-6 py-2 font-bold uppercase tracking-widest hover:bg-primary-dim transition-all">[ CERRAR ]</button>' : '<div class="text-primary animate-pulse">...</div>'}
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(modal);
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('hacker-modal');
+            if (modal) modal.remove();
+        }
+    </script>
+</body>
+
+</html>

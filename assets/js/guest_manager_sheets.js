@@ -1,22 +1,37 @@
 // guest_manager_sheets.js
-// Reemplaza la URL con la de tu Web App de Google Apps Script
-const SHEETS_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbwpNoNoVw09OJYlOmqP8nPwkaTlC0UYyky9oUFUVaz7nWT6_P8U17X3qNeEXfaJxhFk/exec";
+// URL de tu Web App de Google Apps Script
+const SHEETS_URL = "https://script.google.com/macros/s/AKfycbxOeLiBMZWsfWlaE-60yt2sUu4dCn5F3cRWXnZ0c6fbrtPYXMlFSHT-USFDXxoI5GP04A/exec";
 
-function saveGuestSheets(name, status) {
-    fetch(SHEETS_WEBAPP_URL, {
+/**
+ * Guarda invitado en Google Sheets
+ */
+function saveGuestSheets(nombre, estado) {
+    fetch(SHEETS_URL, {
         method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ nombre: name, estado: status })
+        body: JSON.stringify({
+            nombre: nombre,
+            estado: estado
+        })
     })
-    .then(res => res.text())
-    .then(txt => {
-        console.log("Respuesta Google Sheets:", txt);
-        alert("¡Registro enviado!");
-    })
-    .catch(err => {
-        console.error("Error Google Sheets:", err);
-        alert("Error al registrar. Intenta de nuevo.");
-    });
+        .then(() => {
+            console.log("✔ Invitado guardado");
+        })
+        .catch(err => {
+            console.error("❌ Error:", err);
+        });
+}
+
+/**
+ * Obtiene invitados de Google Sheets (requiere doGet en el script)
+ */
+function getGuests(callback) {
+    fetch(SHEETS_URL)
+        .then(res => res.json())
+        .then(data => {
+            if (callback) callback(data.guests || []);
+        })
+        .catch(err => {
+            console.error("❌ Error al leer:", err);
+            if (callback) callback([]);
+        });
 }

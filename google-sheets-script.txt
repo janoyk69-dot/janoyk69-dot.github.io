@@ -1,16 +1,54 @@
 // Google Apps Script para Google Sheets
+// =====================================
+// INSTRUCCIONES:
 // 1. Abre tu Google Sheets
 // 2. Ve a Extensiones > Apps Script
-// 3. Pega este código y guarda
-// 4. Publica como "Web App" (acceso: cualquiera)
+// 3. Pega este código COMPLETO y guarda
+// 4. Publica como "Web App":
+//    - Ejecutar como: "Yo" (tu cuenta)
+//    - Quién tiene acceso: "Cualquier persona"
+// 5. IMPORTANTE: Crea una NUEVA implementación cada vez que cambies el código
+// =====================================
 
+// Guardar invitado (POST)
 function doPost(e) {
-  var ss = SpreadsheetApp.getActiveSpreadsheet();
-  var sheet = ss.getSheetByName('Respuestas'); // Cambia el nombre si tu hoja es diferente
-  var params = JSON.parse(e.postData.contents);
-  var nombre = params.nombre || '';
-  var estado = params.estado || '';
-  var fecha = new Date();
-  sheet.appendRow([nombre, estado, fecha]);
-  return ContentService.createTextOutput('OK');
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const sheet = ss.getSheetByName("Respuestas");
+  
+  // Leer datos del formulario HTML
+  const nombre = e.parameter.nombre || "";
+  const estado = e.parameter.estado || "";
+  
+  sheet.appendRow([nombre, estado, new Date()]);
+  
+  // Devolver JSON en lugar de redirigir
+  return ContentService.createTextOutput(JSON.stringify({
+    success: true,
+    message: "Invitado registrado"
+  })).setMimeType(ContentService.MimeType.JSON);
+}
+
+// Leer lista de invitados (GET)
+function doGet(e) {
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const sheet = ss.getSheetByName("Respuestas");
+  const data = sheet.getDataRange().getValues();
+  
+  var guests = [];
+  
+  // Saltar la primera fila si es encabezado (asumiendo: nombre | estado | fecha)
+  for (var i = 1; i < data.length; i++) {
+    if (data[i][0]) { // Si hay nombre
+      guests.push({
+        nombre: data[i][0],
+        estado: data[i][1],
+        fecha: data[i][2] ? new Date(data[i][2]).toISOString() : ""
+      });
+    }
+  }
+  
+  return ContentService.createTextOutput(JSON.stringify({
+    success: true,
+    guests: guests
+  })).setMimeType(ContentService.MimeType.JSON);
 }
