@@ -1,0 +1,16 @@
+// Google Apps Script para Google Sheets
+// 1. Abre tu Google Sheets
+// 2. Ve a Extensiones > Apps Script
+// 3. Pega este código y guarda
+// 4. Publica como "Web App" (acceso: cualquiera)
+
+function doPost(e) {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var sheet = ss.getSheetByName('Respuestas'); // Cambia el nombre si tu hoja es diferente
+  var params = JSON.parse(e.postData.contents);
+  var nombre = params.nombre || '';
+  var estado = params.estado || '';
+  var fecha = new Date();
+  sheet.appendRow([nombre, estado, fecha]);
+  return ContentService.createTextOutput('OK');
+}
