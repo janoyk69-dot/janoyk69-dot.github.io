@@ -25,6 +25,7 @@
         }
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
     <style>
         body { font-family: 'Share Tech Mono', monospace; background-color: #0d0208; color: #00ff41; }
         .crt::before {
@@ -48,19 +49,21 @@
     </div>
 
     <div id="main-content" class="max-w-2xl mx-auto border border-primary/30 bg-black/80 p-6 shadow-[0_0_20px_rgba(0,255,65,0.1)] hidden">
-        <h1 class="text-2xl mb-6 border-b border-primary/20 pb-2 flex items-center gap-2">
-            <span class="material-symbols-outlined text-primary">group</span>
-            &gt; DECRYPTED_GUEST_LIST_
-        </h1>
+        <div class="flex items-center justify-between mb-6 border-b border-primary/20 pb-4">
+            <h1 class="text-2xl flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary">group</span>
+                &gt; DECRYPTED_GUEST_LIST_
+            </h1>
+            <a href="invitacion.html" class="flex items-center gap-2 text-primary/60 hover:text-primary transition-colors border border-primary/30 px-4 py-2 hover:bg-primary/10 group">
+                <span class="material-symbols-outlined text-sm">arrow_back</span>
+                <span class="text-[10px] font-bold uppercase tracking-widest">VOLVER</span>
+            </a>
+        </div>
         
         <div id="guest-container" class="space-y-3">
             <!-- Los nombres aparecerán aquí -->
             <p class="text-primary-dim italic text-sm">Waiting for incoming data...</p>
         </div>
-
-        <button onclick="clearList()" class="mt-8 text-[10px] text-red-500 border border-red-500/30 px-2 py-1 hover:bg-red-500/10 transition-all">
-            [ WIPE_DATABASE ]
-        </button>
     </div>
 
     <script src="js/guest_manager.js"></script>
@@ -88,22 +91,26 @@
             }
 
             container.innerHTML = guests.map((guest, index) => `
-                <div class="flex items-center justify-between border border-primary/10 p-3 bg-primary/5">
-                    <div class="flex flex-col">
-                        <span class="text-white"><span class="text-primary/40 mr-2">${index + 1}.</span> ${guest.name}</span>
-                        <span class="text-[9px] text-primary/60 font-bold uppercase tracking-widest">${guest.status}</span>
+                <div class="group relative border-2 border-primary/20 p-4 bg-gradient-to-br from-primary/5 to-black hover:border-primary/50 transition-all hover:shadow-[0_0_15px_rgba(0,255,65,0.15)]">
+                    <div class="absolute top-2 right-2">
+                        <span class="material-symbols-outlined text-primary/30 text-xs">${guest.status === 'ASISTIRÉ' ? 'check_circle' : 'cancel'}</span>
                     </div>
-                    <span class="text-[9px] text-primary/40">${guest.time}</span>
+                    <div class="flex items-start gap-3">
+                        <div class="flex items-center justify-center min-w-[32px] h-8 border border-primary/40 bg-black px-2">
+                            <span class="text-primary font-bold text-sm">${String(index + 1).padStart(2, '0')}</span>
+                        </div>
+                        <div class="flex flex-col flex-1">
+                            <span class="text-white font-bold text-lg tracking-wide">${guest.name}</span>
+                            <div class="flex items-center gap-2 mt-1">
+                                <span class="text-[10px] ${guest.status === 'ASISTIRÉ' ? 'text-primary' : 'text-red-400'} font-bold uppercase tracking-widest border ${guest.status === 'ASISTIRÉ' ? 'border-primary/30 bg-primary/10' : 'border-red-400/30 bg-red-400/10'} px-2 py-0.5">${guest.status}</span>
+                                <span class="text-[9px] text-primary/40 font-mono">${guest.time}</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             `).join('');
         }
 
-        function clearList() {
-            if(confirm('ARE YOU SURE YOU WANT TO WIPE ALL DATA?')) {
-                clearGuests();
-                loadGuests();
-            }
-        }
     </script>
 </body>
 </html>
