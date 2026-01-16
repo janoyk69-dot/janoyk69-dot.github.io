@@ -5,6 +5,25 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Guest List - Mission Control</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00ff41",
+                        "primary-dim": "#008F11",
+                        "background-dark": "#0d0208",
+                        "terminal-bg": "#0a0a0a",
+                    },
+                    fontFamily: {
+                        "display": ["Share Tech Mono", "monospace"],
+                        "terminal": ["VT323", "monospace"],
+                    }
+                },
+            },
+        }
+    </script>
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet"/>
     <style>
         body { font-family: 'Share Tech Mono', monospace; background-color: #0d0208; color: #00ff41; }
@@ -20,7 +39,7 @@
     <div id="password-overlay" class="fixed inset-0 bg-black z-[100] flex items-center justify-center p-4">
         <div class="max-w-xs w-full border border-primary p-6 bg-black shadow-[0_0_20px_rgba(0,255,65,0.2)]">
             <h2 class="text-primary text-sm mb-4 font-mono tracking-widest">&gt; AUTH_REQUIRED:</h2>
-            <input type="password" id="admin-pass" class="w-full bg-black border border-primary/40 text-primary p-2 outline-none mb-4 font-mono" placeholder="ENTER_KEY...">
+            <input type="password" id="admin-pass" onkeypress="if(event.key === 'Enter') checkPass()" class="w-full bg-black border border-primary/40 text-primary p-2 outline-none mb-4 font-mono" placeholder="ENTER_KEY...">
             <button onclick="checkPass()" class="w-full bg-primary text-black font-bold py-2 hover:bg-primary-dim transition-all uppercase text-xs">
                 [ DECRYPT ]
             </button>

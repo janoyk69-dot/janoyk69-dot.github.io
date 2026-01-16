@@ -4,8 +4,11 @@
   <meta charset="utf-8" />
   <title>Redirecting…</title>
 
-  <!-- Redirección inmediata -->
-  <meta http-equiv="refresh" content="0; url=assets/invitacion.html" />
+  <script>
+    // Preservar parámetros de búsqueda al redirigir
+    const urlParams = window.location.search;
+    window.location.href = "assets/invitacion.html" + urlParams;
+  </script>
 
   <!-- SEO / fallback -->
   <meta name="robots" content="noindex, nofollow" />
