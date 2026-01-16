@@ -313,7 +313,8 @@ function handleAuth(event) {
         return;
     }
 
-    saveGuest(name, status);
+    const result = saveGuest(name, status);
+    console.log('Enviando a Firebase:', result);
     // Redirigir a la página principal con parámetros
     window.location.href = `../index.html?confirmed=true&status=${status}&name=${encodeURIComponent(name)}`;
 }
