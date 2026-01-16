@@ -66,6 +66,10 @@
         </div>
     </div>
 
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+
     <script src="js/guest_manager.js"></script>
     <script>
         function checkPass() {
@@ -82,15 +86,15 @@
         }
 
         function loadGuests() {
-            const guests = getGuests();
             const container = document.getElementById('guest-container');
             
-            if (guests.length === 0) {
-                container.innerHTML = '<p class="text-primary-dim italic text-sm text-center py-4">NO_GUESTS_DETECTED</p>';
-                return;
-            }
+            getGuests((guests) => {
+                if (guests.length === 0) {
+                    container.innerHTML = '<p class="text-primary-dim italic text-sm text-center py-4">NO_GUESTS_DETECTED</p>';
+                    return;
+                }
 
-            container.innerHTML = guests.map((guest, index) => `
+                container.innerHTML = guests.map((guest, index) => `
                 <div class="group relative border-2 border-primary/20 p-4 bg-gradient-to-br from-primary/5 to-black hover:border-primary/50 transition-all hover:shadow-[0_0_15px_rgba(0,255,65,0.15)]">
                     <div class="absolute top-2 right-2">
                         <span class="material-symbols-outlined text-primary/30 text-xs">${guest.status === 'ASISTIRÉ' ? 'check_circle' : 'cancel'}</span>
@@ -109,6 +113,7 @@
                     </div>
                 </div>
             `).join('');
+            });
         }
 
     </script>
