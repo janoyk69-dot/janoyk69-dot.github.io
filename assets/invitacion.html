@@ -127,7 +127,7 @@
 <span class="text-primary/60 text-[10px] font-mono tracking-widest uppercase">&gt; T-MINUS_DETONATION:</span>
 <div class="h-[1px] flex-1 bg-primary/20"></div>
 </div>
-<div class="grid grid-cols-3 gap-2">
+<div class="grid grid-cols-4 gap-2">
 <div class="flex flex-col items-center border border-primary/20 py-2 bg-primary/5">
 <span id="cd-days" class="text-primary font-terminal text-4xl flicker-neon leading-none">--</span>
 <span class="text-primary-dim text-[9px] font-mono uppercase mt-1 tracking-widest">DAYS</span>
@@ -139,6 +139,10 @@
 <div class="flex flex-col items-center border border-primary/20 py-2 bg-primary/5">
 <span id="cd-mins" class="text-primary font-terminal text-4xl flicker-neon leading-none">--</span>
 <span class="text-primary-dim text-[9px] font-mono uppercase mt-1 tracking-widest">MINS</span>
+</div>
+<div class="flex flex-col items-center border border-primary/20 py-2 bg-primary/5">
+<span id="cd-secs" class="text-primary font-terminal text-4xl flicker-neon leading-none">--</span>
+<span class="text-primary-dim text-[9px] font-mono uppercase mt-1 tracking-widest">SECS</span>
 </div>
 </div>
 </div>
@@ -190,10 +194,10 @@
 </div>
 <form class="flex flex-col gap-5" id="invitation-form" onsubmit="handleAuth(event)">
 <div class="grid grid-cols-2 gap-4">
-<button type="button" onclick="setStatus('ASISTIRÉ')" class="relative py-3 text-[10px] font-bold text-black bg-primary border border-primary transition-colors uppercase tracking-[0.2em] font-mono">
+<button type="button" onclick="setStatus('ASISTIRÉ', this)" class="relative py-3 text-[10px] font-bold text-black bg-primary border border-primary transition-colors uppercase tracking-[0.2em] font-mono">
                         [ ASISTIRÉ ]
                     </button>
-<button type="button" onclick="setStatus('NO_ASISTIRÉ')" class="relative py-3 text-[10px] font-bold text-primary border border-primary/40 hover:bg-primary/10 transition-colors uppercase tracking-[0.2em] font-mono">
+<button type="button" onclick="setStatus('NO_ASISTIRÉ', this)" class="relative py-3 text-[10px] font-bold text-primary border border-primary/40 hover:bg-primary/10 transition-colors uppercase tracking-[0.2em] font-mono">
                         [ NO ASISTIRÉ ]
                     </button>
 </div>
@@ -239,13 +243,15 @@
         const dEl = document.getElementById("cd-days");
         const hEl = document.getElementById("cd-hours");
         const mEl = document.getElementById("cd-mins");
+        const sEl = document.getElementById("cd-secs");
 
-        if (!dEl || !hEl || !mEl) return;
+        if (!dEl || !hEl || !mEl || !sEl) return;
 
         if (diff <= 0) {
             dEl.textContent = "00";
             hEl.textContent = "00";
             mEl.textContent = "00";
+            sEl.textContent = "00";
             return;
         }
 
@@ -253,19 +259,34 @@
         const days = Math.floor(totalSeconds / 86400);
         const hours = Math.floor((totalSeconds % 86400) / 3600);
         const mins = Math.floor((totalSeconds % 3600) / 60);
+        const secs = totalSeconds % 60;
 
         dEl.textContent = String(days).padStart(2, "0");
         hEl.textContent = String(hours).padStart(2, "0");
         mEl.textContent = String(mins).padStart(2, "0");
+        sEl.textContent = String(secs).padStart(2, "0");
     }
 
-    // Run immediately and then every minute
+    // Run immediately and then every second
     updateCountdown();
-    setInterval(updateCountdown, 60000);
+    setInterval(updateCountdown, 1000);
 })();
 
-function setStatus(status) {
+function setStatus(status, btn) {
     document.getElementById('mission-status').value = status;
+    
+    // Limpiar estilos de otros botones
+    const buttons = btn.parentElement.querySelectorAll('button');
+    buttons.forEach(b => {
+        b.classList.remove('ring-4', 'ring-primary', 'scale-105');
+        b.style.boxShadow = 'none';
+    });
+    
+    // Aplicar estilo al seleccionado
+    btn.classList.add('ring-4', 'ring-primary', 'scale-105');
+    btn.style.boxShadow = '0 0 15px #00ff41';
+    
+    console.log("Status selected:", status);
 }
 
 function handleAuth(event) {
