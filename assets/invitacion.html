@@ -4,13 +4,11 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Final Hacker Birthday Invitation with Countdown</title>
+    <title>Hacker Invitation - JANOSKILL</title>
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&amp;family=VT323&amp;display=swap"
-        rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=VT323&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
         rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script id="tailwind-config">
@@ -50,34 +48,83 @@
                 background-size: 100% 2px, 3px 100%;
                 pointer-events: none;
             }
+
             .flicker-neon {
                 animation: flicker 2s infinite;
             }
+
             @keyframes flicker {
                 0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
                     text-shadow: 0 0 5px #00ff41, 0 0 10px #00ff41, 0 0 20px #00ff41;
                     opacity: 1;
                 }
+
                 20%, 24%, 55% {
                     text-shadow: none;
                     opacity: 0.8;
                 }
             }
-            .loading-bar {
-                animation: loading 3s steps(4, end) infinite;
+
+            .glitch-text {
+                position: relative;
+                text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75), -0.025em -0.05em 0 rgba(0, 255, 0, 0.75), 0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+                animation: glitch 500ms infinite;
             }
-            @keyframes loading {
-                0% { content: "."; }
-                33% { content: ".."; }
-                66% { content: "..."; }
-                100% { content: ""; }
+
+            @keyframes glitch {
+                0% {
+                    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75), -0.025em -0.05em 0 rgba(0, 255, 0, 0.75), 0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+                }
+
+                14% {
+                    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75), -0.025em -0.05em 0 rgba(0, 255, 0, 0.75), 0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+                }
+
+                15% {
+                    text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75), 0.025em 0.025em 0 rgba(0, 255, 0, 0.75), -0.05em -0.05em 0 rgba(0, 0, 255, 0.75);
+                }
+
+                49% {
+                    text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75), 0.025em 0.025em 0 rgba(0, 255, 0, 0.75), -0.05em -0.05em 0 rgba(0, 0, 255, 0.75);
+                }
+
+                50% {
+                    text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75), 0.05em 0 0 rgba(0, 255, 0, 0.75), 0 -0.05em 0 rgba(0, 0, 255, 0.75);
+                }
+
+                99% {
+                    text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75), 0.05em 0 0 rgba(0, 255, 0, 0.75), 0 -0.05em 0 rgba(0, 0, 255, 0.75);
+                }
+
+                100% {
+                    text-shadow: -0.025em 0 0 rgba(255, 0, 0, 0.75), -0.025em -0.025em 0 rgba(0, 255, 0, 0.75), -0.025em -0.05em 0 rgba(0, 0, 255, 0.75);
+                }
             }
+
             .loading-indicator::after {
                 content: "...";
                 display: inline-block;
                 width: 1.5em;
                 text-align: left;
                 animation: loading 1.5s infinite;
+            }
+
+            @keyframes loading {
+                0% {
+                    content: ".";
+                }
+
+                33% {
+                    content: "..";
+                }
+
+                66% {
+                    content: "...";
+                }
+
+                100% {
+                    content: "";
+                }
             }
         }
     </style>
@@ -112,23 +159,36 @@
         </div>
         <div class="relative z-10 flex flex-col items-center justify-center pt-6 pb-4 text-center px-4">
             <div
-                class="relative border-2 border-primary/50 p-6 bg-black/70 backdrop-blur-sm shadow-[0_0_15px_rgba(0,255,65,0.15)] w-full">
+                class="relative border-2 border-primary/50 p-6 bg-black/70 backdrop-blur-sm shadow-[0_0_15px_rgba(0,255,65,0.15)] w-full overflow-hidden">
                 <div class="absolute -top-1 -left-1 w-4 h-4 border-t-2 border-l-2 border-primary"></div>
                 <div class="absolute -top-1 -right-1 w-4 h-4 border-t-2 border-r-2 border-primary"></div>
                 <div class="absolute -bottom-1 -left-1 w-4 h-4 border-b-2 border-l-2 border-primary"></div>
                 <div class="absolute -bottom-1 -right-1 w-4 h-4 border-b-2 border-r-2 border-primary"></div>
-                <div class="flex justify-between items-center mb-2 px-1">
-                    <span class="text-primary/40 text-[9px] font-mono">[DECRYPTING_TARGET]</span>
-                    <span class="text-primary/40 text-[9px] font-mono">ID: 0x23_JAN_30</span>
+                <div class="flex justify-between items-center mb-6 px-1">
+                    <span class="text-primary/40 text-[9px] font-mono">[UPLINK_ESTABLISHED]</span>
+                    <span class="text-primary/40 text-[9px] font-mono">NODE: 0x17_JAN_30</span>
+                </div>
+                <div class="mb-4 relative">
+                    <p class="text-primary-dim text-[10px] font-bold uppercase tracking-[0.4em] mb-2 opacity-70">
+                        TARGET_IDENTIFIED:</p>
+                    <div class="relative inline-block py-2">
+                        <span
+                            class="text-primary/30 font-mono text-2xl absolute -left-6 top-1/2 -translate-y-1/2">[[</span>
+                        <h1
+                            class="font-terminal text-[42px] leading-none text-primary tracking-wider glitch-text uppercase border-y border-primary/20 py-2">
+                            JANOSKILL
+                        </h1>
+                        <span
+                            class="text-primary/30 font-mono text-2xl absolute -right-6 top-1/2 -translate-y-1/2">]]</span>
+                    </div>
                 </div>
                 <h1
-                    class="font-terminal text-[120px] leading-[0.8] text-primary tracking-tighter drop-shadow-[0_0_10px_rgba(0,255,65,0.8)]">
+                    class="font-terminal text-[130px] leading-[0.75] text-primary tracking-tighter drop-shadow-[0_0_15px_rgba(0,255,65,1)] flicker-neon">
                     23
                 </h1>
                 <div class="mt-4 flex flex-col items-center gap-1">
-                    <p class="text-primary-dim text-xs font-bold uppercase tracking-[0.3em]">&gt; MI CUMPLEAÑOS</p>
-                    <div class="bg-primary/20 px-4 py-1 border border-primary/40 mt-1">
-                        <p class="text-primary text-sm font-bold tracking-[0.3em] uppercase">ACCESS_GRANTED</p>
+                    <div class="bg-primary px-6 py-1 border-2 border-black mt-2">
+                        <p class="text-black text-xs font-black tracking-[0.4em] uppercase">JANOSKILL TE INVITA</p>
                     </div>
                 </div>
             </div>
@@ -192,7 +252,7 @@
                             <span class="text-primary-dim text-[10px] font-mono uppercase mt-1">GMT_LOCAL</span>
                         </div>
                     </div>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Juan+Emilio+Pacull" target="_blank"
+                    <a href="https://www.google.com/maps/search/?api=1&query=Juan+Emilio+Pacull+1513" target="_blank"
                         class="w-full relative bg-primary/10 border border-primary/20 p-3 flex items-center gap-3 hover:bg-primary/20 transition-all cursor-pointer group">
                         <div
                             class="h-8 w-8 border border-primary flex items-center justify-center shrink-0 shadow-[0_0_5px_rgba(0,255,65,0.3)] bg-black">
@@ -247,14 +307,18 @@
                         </div>
                     </div>
                     <button type="submit"
-                        class="w-full bg-primary border-4 border-double border-black text-black font-black text-lg py-4 shadow-[0_0_20px_rgba(0,255,65,0.4)] active:scale-95 transition-all flex flex-col items-center justify-center mt-2 uppercase tracking-[0.25em] group overflow-hidden">
-                        <div class="flex items-center gap-2">
+                        class="w-full bg-primary border-4 border-double border-black text-black font-black text-lg py-4 shadow-[0_0_20px_rgba(0,255,65,0.6)] active:scale-95 transition-all flex flex-col items-center justify-center mt-2 uppercase tracking-[0.25em] group overflow-hidden relative">
+                        <div class="flex items-center gap-2 relative z-10">
                             <span class="material-symbols-outlined text-xl">priority_high</span>
                             <span>REGISTRAR ASISTENCIA</span>
                             <span class="material-symbols-outlined text-xl">send</span>
                         </div>
-                        <div class="text-[8px] font-mono mt-0.5 opacity-80 tracking-widest uppercase">
+                        <div
+                            class="text-[8px] font-mono mt-0.5 opacity-80 tracking-widest uppercase relative z-10 font-bold">
                             CRITICAL_TASK_COMMAND</div>
+                        <div
+                            class="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform">
+                        </div>
                     </button>
                     <div class="flex justify-center mt-2 flex-col items-center gap-2">
                         <a class="flex items-center gap-1.5 text-primary/40 hover:text-primary transition-colors text-[9px] font-mono uppercase tracking-widest"
@@ -270,19 +334,8 @@
         </div>
     </div>
 
-
     <script>
             (function () {
-                // Comprobar si viene de una confirmación
-                const urlParams = new URLSearchParams(window.location.search);
-                if (urlParams.get('confirmed')) {
-                    const name = urlParams.get('name');
-                    const status = urlParams.get('status') === 'ASISTIRÉ' ? 'confirmada' : 'declinada';
-                    alert(`> SYSTEM_MESSAGE: ¡Misión cumplida! ${name}, su respuesta ha sido ${status} con éxito. Redirigiendo al inicio...`);
-                    // Limpiar la URL y redirigir al index (opcional, o quedarse aquí)
-                    window.history.replaceState({}, document.title, window.location.pathname);
-                }
-
                 function updateCountdown() {
                     const TARGET = new Date(2026, 0, 30, 19, 0, 0);
                     const NOW = new Date();
@@ -315,7 +368,6 @@
                     sEl.textContent = String(secs).padStart(2, "0");
                 }
 
-                // Run immediately and then every second
                 updateCountdown();
                 setInterval(updateCountdown, 1000);
             })();
@@ -323,14 +375,12 @@
         function setStatus(status, btn) {
             document.getElementById('mission-status').value = status;
 
-            // Limpiar estilos de otros botones
             const buttons = btn.parentElement.querySelectorAll('button');
             buttons.forEach(b => {
                 b.classList.remove('ring-4', 'ring-primary', 'scale-105');
                 b.style.boxShadow = 'none';
             });
 
-            // Aplicar estilo al seleccionado
             btn.classList.add('ring-4', 'ring-primary', 'scale-105');
             btn.style.boxShadow = '0 0 15px #00ff41';
 
@@ -349,10 +399,8 @@
                 return;
             }
 
-            // Mostrar loading
             showModal('⏳ PROCESANDO...', 'Enviando datos al servidor...', 'loading');
 
-            // Enviar con fetch
             const formData = new FormData();
             formData.append('nombre', nombre);
             formData.append('estado', estado);
@@ -363,7 +411,6 @@
                 body: formData
             })
                 .then(() => {
-                    // Mensajes diferentes según la respuesta
                     if (estado === 'NO_ASISTIRÉ') {
                         showModal('⚠️ MISIÓN FALLIDA', `No creo que podamos ingresar al servidor exitosamente sin "${nombre}". Tu respuesta ha sido registrada.`, 'error');
                     } else {
@@ -371,7 +418,6 @@
                     }
                     document.getElementById('invitation-form').reset();
                     document.getElementById('mission-status').value = 'PENDING';
-                    // Limpiar estilos de botones
                     document.querySelectorAll('#invitation-form button[type="button"]').forEach(b => {
                         b.classList.remove('ring-4', 'ring-primary', 'scale-105');
                         b.style.boxShadow = 'none';
@@ -384,7 +430,6 @@
         }
 
         function showModal(title, message, type) {
-            // Remover modal existente si hay
             const existing = document.getElementById('hacker-modal');
             if (existing) existing.remove();
 
