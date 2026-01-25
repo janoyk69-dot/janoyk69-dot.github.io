@@ -1,4 +1,4 @@
-# 🎂 Birthday Invitation – Hacker Style
+# 🎂 Feli Cumpleaños Janito
 
 Repositorio de GitHub Pages que publica una invitación web interactiva
 con estilo **terminal / hacker**.
